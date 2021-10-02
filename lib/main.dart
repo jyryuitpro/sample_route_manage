@@ -20,11 +20,13 @@ class MyApp extends StatelessWidget {
           visualDensity: VisualDensity.adaptivePlatformDensity),
       // home: Home(),
       initialRoute: '/',
+      // 기존 방식
       // routes: {
       //   '/': (context) => Home(),
       //   '/first': (context) => FirstNamedPage(),
       //   '/second': (context) => SecondNamedPage(),
       // },
+      // GetX
       getPages: [
         GetPage(
           name: '/',

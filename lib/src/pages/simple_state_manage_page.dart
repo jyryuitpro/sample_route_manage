@@ -11,6 +11,7 @@ class SimpleStateManagePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // GetX instance
     Get.put(CountControllerWithGetX());
     return Scaffold(
       appBar: AppBar(

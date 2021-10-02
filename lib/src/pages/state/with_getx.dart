@@ -8,7 +8,8 @@ class WithGetX extends StatelessWidget {
 
   const WithGetX({Key? key}) : super(key: key);
 
-  Widget _button(String id) {
+  // Widget _button(String id) {
+  Widget _button() {
     return RaisedButton(
       child: Text(
         '+',
@@ -17,13 +18,16 @@ class WithGetX extends StatelessWidget {
         ),
       ),
       onPressed: () {
-        Get.find<CountControllerWithGetX>().increase(id);
+        // _controllerWithGetX.increase(id);
+        // Get.find<CountControllerWithGetX>().increase(id);
+        Get.find<CountControllerWithGetX>().increase();
       },
     );
   }
 
   @override
   Widget build(BuildContext context) {
+    // GetX instance 여기서도 가능
     // Get.put(CountControllerWithGetX());
     return Center(
       child: Column(
@@ -36,8 +40,9 @@ class WithGetX extends StatelessWidget {
             ),
           ),
           GetBuilder<CountControllerWithGetX>(
-            id: 'first',
+            // id: 'first',
             builder: (controller) {
+              print('UPDATE!!!');
               return Text(
                 '${controller.count}',
                 style: TextStyle(
@@ -47,8 +52,9 @@ class WithGetX extends StatelessWidget {
             },
           ),
           GetBuilder<CountControllerWithGetX>(
-            id: 'second',
+            // id: 'second',
             builder: (controller) {
+              print('UPDATE!!!');
               return Text(
                 '${controller.count}',
                 style: TextStyle(
@@ -57,8 +63,22 @@ class WithGetX extends StatelessWidget {
               );
             },
           ),
-          _button('first'),
-          _button('second'),
+          // _button('first'),
+          // _button('second'),
+          _button(),
+          RaisedButton(
+            child: Text(
+              '5로 변경',
+              style: TextStyle(
+                fontSize: 30,
+              ),
+            ),
+            onPressed: () {
+              // _controllerWithGetX.increase(id);
+              // Get.find<CountControllerWithGetX>().increase(id);
+              Get.find<CountControllerWithGetX>().putNumber(5);
+            },
+          )
         ],
       ),
     );

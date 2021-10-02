@@ -32,6 +32,7 @@ class SecondPage extends StatelessWidget {
                 //     (route) => false);
 
                 // Get.to(Home());
+                // 회원가입 || Splash || 돌아갈 필요가 없는 페이지
                 Get.offAll(Home());
               },
             )

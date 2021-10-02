@@ -7,6 +7,7 @@ class NextPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(Get.arguments.runtimeType);
     return Scaffold(
       appBar: AppBar(
         title: Text('Next Page'),
