@@ -1,7 +1,11 @@
 import 'package:get/get.dart';
 
 class CountControllerWithGetX extends GetxController {
-  int count = 0;
+  static CountControllerWithGetX get to => Get.find();
+
+  // int count = 0;
+
+  RxInt count = 0.obs;
 
   void increase() {
     count++;
@@ -13,8 +17,12 @@ class CountControllerWithGetX extends GetxController {
   //   update([id]);
   // }
 
+  // void putNumber(int value) {
+  //   count = value;
+  //   update();
+  // }
+
   void putNumber(int value) {
-    count = value;
-    update();
+    count(value);
   }
 }

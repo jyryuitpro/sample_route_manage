@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sample_route_manage/src/binding/binding_page_binding.dart';
+import 'package:sample_route_manage/src/controller/count_controller_with_getx.dart';
 import 'package:sample_route_manage/src/home.dart';
+import 'package:sample_route_manage/src/pages/binding.dart';
 import 'package:sample_route_manage/src/pages/named/first_named_page.dart';
 import 'package:sample_route_manage/src/pages/named/second_named_page.dart';
 import 'package:sample_route_manage/src/pages/next_page.dart';
@@ -51,6 +54,12 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: '/user/:uid',
           page: () => UserPage(),
+          transition: Transition.zoom,
+        ),
+        GetPage(
+          name: '/binding',
+          page: () => BindingPage(),
+          binding: BindingPageBinding(),
           transition: Transition.zoom,
         ),
       ],
